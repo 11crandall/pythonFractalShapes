@@ -1,7 +1,7 @@
 import turtle, math, _thread, time, random
 
 def colorshift(bill):
-    color = "#%06x" % random.randint(0, 0xFFFFFF)
+    color = "#%06x" % random.randint(0x000000, 0xFFFFFF)
     bill.pencolor(color)
 def fractalLine(bill,sides,instances,length,toRadius,heading=0):
     
