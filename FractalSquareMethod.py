@@ -1,4 +1,4 @@
-import turtle, math, _thread, time
+import turtle, math, _thread, time, random
 
 def fractalLine(bill,sides,instances,length,toRadius,heading=0):
     
@@ -6,7 +6,8 @@ def fractalLine(bill,sides,instances,length,toRadius,heading=0):
     
 
     bill.setheading(heading)
-
+    color = "#%06x" % random.randint(0, 0xFFFFFF)
+    bill.pencolor(color)
     if instances == 0:#no breaks, just a line
     #add decrementing color generation
         bill.forward(length)
@@ -40,7 +41,8 @@ def fractalShape(level,length,sides,heading=0,pos=(0,0), speed=0):
         bill.speed(speed)
 
         #add color???
-        bill.pencolor("#1ef287")
+        color = "#%06x" % random.randint(0, 0xFFFFFF)
+        bill.pencolor(color)
 
         _thread.start_new_thread(fractalLine,(bill,sides,level,length,(length/(2*math.tan(math.radians(180/sides))))*.95,heading))
 
